@@ -64,6 +64,12 @@ ln -s ../../bbHproduction/GEN-SIM/resubmit.sh
 ```
 
 Put your GEN-SIM dataset names into ```datasets_GENSIM.txt```, one per line.
+
+Need to adjust ```crabConfig_MCgeneration_DIGI76X_step1.py``` to point to a storage site that you have write access to:
+```
+config.Site.storageSite = 'T2_DE_DESY'
+```
+
 Then you can submit:
 ```
 submitCrab_DIGI.sh
@@ -80,6 +86,12 @@ source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 ```
 
 Put your DIGI dataset names into ```datasets_DIGI.txt```, one per line.
+
+Need to adjust ```crabConfig_MCgeneration_RECO76X_step2.py``` to point to a storage site that you have write access to:
+```
+config.Site.storageSite = 'T2_DE_DESY'
+```
+
 Then you can submit:
 ```
 submitCrab_RECO.sh
