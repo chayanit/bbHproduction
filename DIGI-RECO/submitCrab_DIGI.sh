@@ -18,6 +18,5 @@ for DATASETIN in `cat datasets_GENSIM.txt`; do
   sed -i -e "s/DATASETOUT/$DATASETOUT/g" $CRABCONFIG
   sed -i -e "s/DATE/$DATE/g" $CRABCONFIG
   sed -i -e "s/NJOBS/$NJOBS/g" $CRABCONFIG
-  echo crab submit -c $CRABCONFIG
-  break
+  crab submit -c $CRABCONFIG
 done
