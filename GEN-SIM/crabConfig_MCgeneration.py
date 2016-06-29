@@ -18,3 +18,4 @@ config.Data.publication = True
 config.Data.outputDatasetTag = 'DATASET'
 
 config.Site.storageSite = 'T2_CH_CSCS'
+config.Site.blacklist = ['T3_US_Baylor']
