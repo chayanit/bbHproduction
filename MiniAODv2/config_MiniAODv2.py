@@ -27,16 +27,8 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/08075F4F-CDAB-E511-A2A3-002590D9D9E4.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/1AD4254C-06AD-E511-90A1-02163E0176A6.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/1E8ED51A-8FAB-E511-9097-0CC47A57CD56.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/24B04B8A-FEAB-E511-8864-0CC47A0AD668.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/2A3FD014-1EAC-E511-8B05-002590D9D896.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/4C2C00BB-FCB0-E511-A378-0CC47A78A408.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/4EFA80B6-87AC-E511-B7DF-02163E0161CA.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/5AC5EABA-B6AB-E511-BA90-00304867FD8F.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/60DCF9AA-95AB-E511-8A01-00259075D714.root', 
-        '/store/mc/RunIIFall15DR76/SUSYGluGluToBBHToBB_M-100_TuneCUETP8M1_13TeV-pythia8/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/50000/6467D8FD-A2AB-E511-9CB0-0CC47A57CEB4.root'),
+    #fileNames = cms.untracked.vstring('file://test.root'), 
+    fileNames = cms.untracked.vstring('/store/user/clange/MSSMHbb/SUSYGluGluToBBHToBB_M-700_cfg_DIGI76X_RECO76X/160630_075001/0000/HIG-RunIIFall15DR76-00619_102.root'), 
     secondaryFileNames = cms.untracked.vstring()
 )
 

@@ -4,7 +4,7 @@ NJOBS=500
 CRABTEMPLATE=crabConfig_MCgeneration_MiniAODv2.py
 DATE=`date +'%F'`
 
-for DATASETIN in `cat datasets_MINIAODSIMv1.txt`; do
+for DATASETIN in `cat datasets_AODSIM.txt`; do
   echo "DATASETIN: $DATASETIN"
   a=("${(@s/-/)DATASETIN}")
   INSHORT=$a[2]-$a[3]
