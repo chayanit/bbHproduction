@@ -1,17 +1,17 @@
 #!/bin/zsh
 
 NJOBS=500
-CRABTEMPLATE=crabConfig_MCgeneration_MiniAODv1.py
+CRABTEMPLATE=crabConfig_MCgeneration_MiniAODv2.py
 DATE=`date +'%F'`
 
-for DATASETIN in `cat datasets_AODSIM.txt`; do
+for DATASETIN in `cat datasets_MINIAODSIMv1.txt`; do
   echo "DATASETIN: $DATASETIN"
   a=("${(@s/-/)DATASETIN}")
   INSHORT=$a[2]-$a[3]
   echo "INSHORT $INSHORT"
   CRABCONFIG=crabConfig_${INSHORT}.py
   echo "CRABCONFIG $CRABCONFIG"
-  DATASETOUT=${INSHORT}_MiniAODv1_76X
+  DATASETOUT=${INSHORT}_MiniAODv2_76X
    echo "DATASETOUT: $DATASETOUT"
   cp $CRABTEMPLATE $CRABCONFIG
   sed -i -e "s|DATASETIN|$DATASETIN|g" $CRABCONFIG
