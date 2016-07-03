@@ -60,7 +60,6 @@ cd CMSSW_7_6_1/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 for i in `ls ../../bbHproduction/DIGI-RECO`; do ln -s ../../bbHproduction/DIGI-RECO/$i; done
-ln -s ../../bbHproduction/GEN-SIM/resubmit.sh
 ```
 
 Put your GEN-SIM dataset names into ```datasets_GENSIM.txt```, one per line.
@@ -73,6 +72,13 @@ config.Site.storageSite = 'T2_DE_DESY'
 Then you can submit:
 ```
 submitCrab_DIGI.sh
+```
+
+### job sitting
+
+To check the status of your jobs and to resubmit the failed ones:
+```
+./resubmit_DIGI.sh
 ```
 
 ## RECO step
@@ -101,7 +107,39 @@ submitCrab_RECO.sh
 
 To check the status of your jobs and to resubmit the failed ones:
 ```
-./resubmit.sh
+./resubmit_RECO.sh
 ```
 
-Mind that this would also resubmit failed DIGI jobs when you're already running RECO jobs (but this won't hurt).
+## MiniAOD (v2) step
+
+Mind that v1 is not needed, i.e. the MiniAODv1 scripts in DIGI-RECO can be ignored.
+
+Start again in the ```signalProduction``` directory, probably best from a clean shell (set up CMS software environment again).
+
+
+```
+cmsrel CMSSW_7_6_3
+cd CMSSW_7_6_3/src
+cmsenv
+source /cvmfs/cms.cern.ch/crab3/crab_light.sh
+for i in `ls ../../bbHproduction/MiniAODv2`; do ln -s ../../bbHproduction/MiniAODv2/$i; done
+```
+
+Put your RECO dataset names into ```datasets_AODSIM.txt```, one per line.
+
+Need to adjust ```crabConfig_MCgeneration_MiniAODv2.py``` to point to a storage site that you have write access to:
+```
+config.Site.storageSite = 'T2_DE_DESY'
+```
+
+Then you can submit:
+```
+submitCrab_MiniAODv2.sh
+```
+
+### job sitting
+
+To check the status of your jobs and to resubmit the failed ones:
+```
+./resubmit.sh
+```
