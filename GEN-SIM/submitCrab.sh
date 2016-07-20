@@ -1,15 +1,17 @@
 #!/bin/zsh
 
 EVENTSJOB=200
-NJOBS=550
+NJOBS=1100
 TEMPLATE=crabConfig_MCgeneration.py
 DATE=`date +'%F'`
 
 for CONFIG in `ls configs/*.py`; do
   #echo $CONFIG
-  DATASET=`print $CONFIG(:t:r)`_GEN-SIM
+  CONFIG=`print $CONFIG(:t:r)`
+  DATASET=${CONFIG}_GEN-SIM
   CONFIGNAME=crabConfig_${DATASET}.py
   cp $TEMPLATE $CONFIGNAME
+  sed -i -e "s/CONFIG/$CONFIG/g" $CONFIGNAME
   sed -i -e "s/DATASET/$DATASET/g" $CONFIGNAME
   sed -i -e "s/DATE/$DATE/g" $CONFIGNAME
   sed -i -e "s/EVENTSJOB/$EVENTSJOB/g" $CONFIGNAME

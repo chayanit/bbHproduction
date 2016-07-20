@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-NJOBS=500
+NJOBS=1000
 CRABTEMPLATE=crabConfig_MCgeneration_RECO76X_step2.py
 DATE=`date +'%F'`
 
@@ -18,5 +18,5 @@ for DATASETIN in `cat datasets_DIGI.txt`; do
   sed -i -e "s/DATASETOUT/$DATASETOUT/g" $CRABCONFIG
   sed -i -e "s/DATE/$DATE/g" $CRABCONFIG
   sed -i -e "s/NJOBS/$NJOBS/g" $CRABCONFIG
-  echo crab submit -c $CRABCONFIG
+  crab submit -c $CRABCONFIG
 done

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-NJOBS=500
+NJOBS=1000
 CRABTEMPLATE=crabConfig_MCgeneration_MiniAODv2.py
 DATE=`date +'%F'`
 

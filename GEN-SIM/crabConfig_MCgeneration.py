@@ -7,7 +7,7 @@ config.General.transferOutputs = True
 config.General.transferLogs = False
 
 config.JobType.pluginName = 'PrivateMC'
-config.JobType.psetName = 'configs/DATASET.py'
+config.JobType.psetName = 'configs/CONFIG.py'
 
 config.Data.outputPrimaryDataset = 'MSSMHbb'
 config.Data.splitting = 'EventBased'
