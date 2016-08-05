@@ -18,6 +18,7 @@ config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 config.Data.publication = True
 config.Data.outputDatasetTag = 'DATASETOUT'
+config.Data.allowNonValidInputDataset = True
 
 config.Site.storageSite = 'T2_CH_CSCS'
 config.Site.blacklist = ['T3_US_Baylor']

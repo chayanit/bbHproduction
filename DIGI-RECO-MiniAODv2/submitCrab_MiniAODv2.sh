@@ -6,10 +6,10 @@ DATE=`date +'%F'`
 
 for DATASETIN in `cat datasets_AODSIM.txt`; do
   echo "DATASETIN: $DATASETIN"
-  a=("${(@s/-/)DATASETIN}")
-  INSHORT=$a[2]-$a[3]
-  #echo "INSHORT $INSHORT"
-  CRABCONFIG=crabConfig_${INSHORT}.py
+  #a=("${(@s/-/)DATASETIN}")
+  a=("${(@s|/|)DATASETIN}")
+  INSHORT=$a[2]
+  CRABCONFIG=crabConfig_${INSHORT}_MiniAODv2_80X.py
   #echo "CRABCONFIG $CRABCONFIG"
   DATASETOUT=${INSHORT}_MiniAODv2_80X
   #echo "DATASETOUT: $DATASETOUT"

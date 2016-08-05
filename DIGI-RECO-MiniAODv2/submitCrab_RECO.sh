@@ -6,8 +6,10 @@ DATE=`date +'%F'`
 
 for DATASETIN in `cat datasets_DIGI.txt`; do
   echo "DATASETIN: $DATASETIN"
-  a=("${(@s/-/)DATASETIN}")
+  #a=("${(@s/-/)DATASETIN}")
+  a=("${(@s|/|)DATASETIN}")
   INSHORT=$a[2]-$a[3]
+  INSHORT=$a[2]
   CRABCONFIG=crabConfig_${INSHORT}.py
   echo "CRABCONFIG $CRABCONFIG"
   DATASETOUT=${INSHORT}_RECO80X
