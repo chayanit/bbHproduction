@@ -1,5 +1,5 @@
 # bbHproduction
-scripts for MSSM bbH private MC production with crab3
+scripts for MSSM bbH NLO private MC production with crab3
 
 ## setup
 
@@ -7,7 +7,7 @@ Clone the repository into a new directory (more directories will show up in para
 ```
 mkdir signalProduction
 cd signalProduction
-git clone git@github.com:clelange/bbHproduction.git
+git clone git@github.com:chayanit/bbHproduction.git
 ```
 
 ### at DESY
@@ -25,8 +25,8 @@ module load cmssw
 This step needs a working CMS software environment (see above). Need to be in ```signalProduction``` directory.
 
 ```
-cmsrel CMSSW_7_1_24
-cd CMSSW_7_1_24/src
+cmsrel CMSSW_7_1_26
+cd CMSSW_7_1_26/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 for i in `ls ../../bbHproduction/GEN-SIM`; do ln -s ../../bbHproduction/GEN-SIM/$i; done
@@ -55,8 +55,8 @@ Start again in the ```signalProduction``` directory, probably best from a clean 
 
 
 ```
-cmsrel CMSSW_7_6_1
-cd CMSSW_7_6_1/src
+cmsrel CMSSW_8_0_21
+cd CMSSW_8_0_21/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 for i in `ls ../../bbHproduction/DIGI-RECO`; do ln -s ../../bbHproduction/DIGI-RECO/$i; done
@@ -64,7 +64,7 @@ for i in `ls ../../bbHproduction/DIGI-RECO`; do ln -s ../../bbHproduction/DIGI-R
 
 Put your GEN-SIM dataset names into ```datasets_GENSIM.txt```, one per line.
 
-Need to adjust ```crabConfig_MCgeneration_DIGI76X_step1.py``` to point to a storage site that you have write access to:
+Need to adjust ```crabConfig_MCgeneration_DIGI80X_step1.py``` to point to a storage site that you have write access to:
 ```
 config.Site.storageSite = 'T2_DE_DESY'
 ```
@@ -86,14 +86,14 @@ To check the status of your jobs and to resubmit the failed ones:
 This step needs the same setup as the DIGI one, so you can just setup CMSSW and crab again, or reuse the same shell:
 
 ```
-cd CMSSW_7_6_1/src
+cd CMSSW_8_0_21/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 ```
 
 Put your DIGI dataset names into ```datasets_DIGI.txt```, one per line.
 
-Need to adjust ```crabConfig_MCgeneration_RECO76X_step2.py``` to point to a storage site that you have write access to:
+Need to adjust ```crabConfig_MCgeneration_RECO80X_step2.py``` to point to a storage site that you have write access to:
 ```
 config.Site.storageSite = 'T2_DE_DESY'
 ```
@@ -118,8 +118,8 @@ Start again in the ```signalProduction``` directory, probably best from a clean 
 
 
 ```
-cmsrel CMSSW_7_6_3
-cd CMSSW_7_6_3/src
+cmsrel CMSSW_8_0_21
+cd CMSSW_8_0_21/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab_light.sh
 for i in `ls ../../bbHproduction/MiniAODv2`; do ln -s ../../bbHproduction/MiniAODv2/$i; done

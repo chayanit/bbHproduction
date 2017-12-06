@@ -17,5 +17,5 @@ config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 config.Data.publication = True
 config.Data.outputDatasetTag = 'DATASET'
 
-config.Site.storageSite = 'T2_CH_CSCS'
+config.Site.storageSite = 'T2_DE_DESY'
 config.Site.blacklist = ['T3_US_Baylor']

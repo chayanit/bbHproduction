@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 NJOBS=1000
-CRABTEMPLATE=crabConfig_MCgeneration_RECO76X_step2.py
+CRABTEMPLATE=crabConfig_MCgeneration_RECO80X_step2.py
 DATE=`date +'%F'`
 
 for DATASETIN in `cat datasets_DIGI.txt`; do
@@ -10,7 +10,7 @@ for DATASETIN in `cat datasets_DIGI.txt`; do
   INSHORT=$a[2]-$a[3]
   CRABCONFIG=crabConfig_${INSHORT}.py
   echo "CRABCONFIG $CRABCONFIG"
-  DATASETOUT=${INSHORT}_RECO76X
+  DATASETOUT=${INSHORT}_RECO80X
   echo "DATASETOUT: $DATASETOUT"
   cp $CRABTEMPLATE $CRABCONFIG
   sed -i -e "s|DATASETIN|$DATASETIN|g" $CRABCONFIG
